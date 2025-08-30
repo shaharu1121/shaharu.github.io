@@ -1,39 +1,95 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
 nav {
-    background-color: #333;
-    padding: 10px 0;
+  background-color: #333;
+  padding: 10px 0;
 }
 
 .menu {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
 }
 
 .menu li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 20px;
-    display: block;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .menu a:hover {
-    background-color: #555;
+  background-color: #555;
+}
+#session4 {
+  border: 2px solid black;
+  padding: 50px;
+  position: relative;
+}
+#content4 {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: yellow;
+}
+#rotate {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: rotate(45deg);
+  display: none;
+}
+/* grid */
+.grid-container {
+  /* turn on the grid layout */
+  display: grid;
+  /* fr: fractional unit */
+  /* 3 columns 1 part 2 part 3 part */
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: auto 1fr auto;
+  /* khoảng cách giữa các ô */
+  gap: 10px;
+  background-color: #2196f3;
+  width: 110%;
+  height: 300px;
+}
+.grid-item {
+  background-color: aquamarine;
+  color: brown;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+.item1 {
+  /* chiếm từ cột 1 đến cột 3 */
+  grid-column: 1;
+  grid-row: 1/3;
+}
+.item2 {
+  /* merge from column 1 to column 2 */
+  grid-column: 2/4;
+  grid-row: 1/3;
+  background-color: saddlebrown;
+}
+.item3 {
+  /* merge từ hàng 2 sang hàng 4 */
+  /* grid-row: 1/4;
+  background-color: coral;
+  grid-column: 2/3; */
 }
