@@ -17,35 +17,47 @@
       crossorigin="anonymous"
     />
   </head>
-
   <body>
-    <div>
-      <div class="container">
-       <div class="row">
-        <aside class='col'>
-          <div>
-            <h5>sidebar</h5>
-            <p>sometext...</p>
-          </div>
-        </aside>
-       </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Email address</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        id="email_login"
+        placeholder="name@example.com"
+      />
+    </div>
+    <form class="row g-3">
+      <div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="inputPassword2"
+          placeholder="Password"
+        />
       </div>
-      <section class="col">
-        <div>
-          <h1> telegram</h1>
-          <p>sometext</p>
-        </div>
-      <div class="row">
-        <div class="col-4">
-          <img src="https://placehold.co/600x400/png" class="img-fluid" alt="...">
-        </div>
- <div class="col-4">
-          <img src="https://placehold.co/600x400/png" class="img-fluid" alt="...">
-        </div> <div class="col-4">
-          <img src="https://placehold.co/600x400/png" class="img-fluid" alt="...">
-        </div>
-      </section>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3" onclick="login()">
+          Confirm identity
+        </button>
       </div>
+    </form>
+    <form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </div>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -58,5 +70,6 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
+    <script src="./script.js" type="module"></script>
   </body>
 </html>
