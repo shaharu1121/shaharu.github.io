@@ -136,6 +136,14 @@ img {
   font-size: 24px;
   right: 140px;
 }
-.footer p {
-  font: bold;
+.footer ul a {
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+.HUH {
+  position: absolute;
+  top: 812px;
+  left: 700px;
 }
