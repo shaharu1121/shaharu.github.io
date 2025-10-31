@@ -11,7 +11,7 @@ function sleep(ms) {
 
 async function login(event) {
   event.preventDefault(); // ngăn chặn load trang
-
+  console.log("email_global:", email_global);
   const email = document.getElementById("email_login").value;
   const password = document.getElementById("inputPassword2").value;
   if (email === email_global && password === password_global) {
@@ -66,7 +66,7 @@ async function register(event) {
       draggable: true,
     });
     await sleep(2000); // độ ưu tiên cao - thực hiện trước khi chuyển trang
-    window.location.href = "./index.html"; // chuyển trang
+    window.location.href = "./dangnhap.html"; // chuyển trang
   } else {
     Swal.fire({
       title: "Đăng ký thất bại",
