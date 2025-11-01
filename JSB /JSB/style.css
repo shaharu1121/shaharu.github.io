@@ -33,7 +33,7 @@ div {
   display: flex;
 }
 #navbar a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   background-color: aquamarine;
   border-radius: 5px;
   padding: 5px;
@@ -55,7 +55,7 @@ div {
   font-family: sans-serif;
   z-index: 10010;
 }
-.back-to-top:hover {
+.backtotop:hover {
   background-color: #27ae60;
 }
 .dropdown {
@@ -84,12 +84,14 @@ div {
 }
 .dropdown-content a:hover {
   background-color: #575757;
+  text-decoration: none;
 }
 .dropdown:hover .dropdown-content {
   display: block;
 }
 .dropdown:hover .dropbtn {
   color: aquamarine;
+  text-decoration: none;
 }
 video {
   position: relative;
@@ -113,7 +115,7 @@ h1 {
 }
 .MS {
   position: absolute;
-  right: 145px;
+  right: 170px;
   top: 848px;
   width: 237px;
   height: 237px;
@@ -132,7 +134,7 @@ img {
 .footer h2 {
   position: absolute;
   font-size: 24px;
-  right: 140px;
+  right: 180px;
 }
 .footer ul a {
   justify-content: space-between;
@@ -165,10 +167,11 @@ img {
   height: 100vh;
 }
 .chientich {
+  margin: 0;
+  padding: 0;
   background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
   border: none;
   border-radius: 8px;
-  padding: 10px;
   width: 100%;
 }
 .sgx-section {
@@ -224,19 +227,18 @@ img {
   margin: 0 auto;
 }
 .baibao-hinhbaibao {
-  position: relative;
   border-radius: 16px;
   overflow: hidden;
   height: 420px;
   color: white;
   display: flex;
   align-items: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 .baibao-hinhbaibao:hover {
   transform: translateY(-5px);
 }
 .lopphubaibao {
+  position: relative;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
   padding: 25px;
   height: 100%;
@@ -249,6 +251,9 @@ img {
   margin-bottom: 20px;
 }
 .nutdoc {
+  position: absolute;
+  top: 78%;
+  right: 35%;
   background: #fff;
   color: #000;
   padding: 8px 18px;
@@ -260,8 +265,9 @@ img {
   background: #e0e0e0;
 }
 .gioithieu {
+  margin: 0;
+  padding: 0;
   background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
-  padding: 10px;
 }
 .gioithieuchung {
   margin: 0;
@@ -295,16 +301,13 @@ img {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-/* Phần tiêu đề */
-.history h2 {
+.lichsu h2 {
   color: #002b3d;
   font-weight: 700;
   margin-bottom: 10px;
   margin-top: 10px;
   text-transform: uppercase;
 }
-
 .history p {
   font-size: 18px;
   margin-bottom: 50px;
@@ -314,21 +317,54 @@ img {
   justify-content: center;
   gap: 40px;
 }
-
-.vision,
-.mission {
-  width: 450px;
-}
-
-.vision h3,
-.mission h3 {
+.tamnhin h3,
+.sumenh h3 {
   color: #002b3d;
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 5px;
 }
-.vision p,
-.mission p {
+.tamnhin p,
+.sumenh p {
   font-size: 17px;
   color: #333;
+  height: 200px;
+}
+.Neymar {
+  position: absolute;
+  left: 1000px;
+  top: 1375px;
+  width: 237px;
+  height: 237px;
+  display: block;
+}
+.MD {
+  position: absolute;
+  right: 170px;
+  top: 1300px;
+  width: 237px;
+  height: 237px;
+}
+.duanchientich {
+  position: absolute;
+  top: 525px;
+  width: 100px;
+}
+.phaochanracchientich {
+  position: absolute;
+  top: 560px;
+  width: 120px;
+}
+.duangioithieu {
+  position: absolute;
+  top: 450px;
+  width: 100px;
+}
+.phaochanracgioithieu {
+  position: absolute;
+  top: 485px;
+  width: 120px;
+}
+.hoptacvoiKol {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
 }
