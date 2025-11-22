@@ -1,0 +1,677 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+div {
+  padding: 0;
+  margin: 0;
+}
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  z-index: 1100;
+}
+#navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  display: flex;
+}
+#navbar a:hover {
+  text-decoration: none;
+  background-color: aquamarine;
+  border-radius: 5px;
+  padding: 5px;
+}
+#logo {
+  height: 50px;
+  margin-right: 20px;
+}
+.backtotop {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #2ecc71;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: sans-serif;
+  z-index: 10010;
+}
+.backtotop:hover {
+  background-color: #27ae60;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+.dropdown-content a {
+  color: white;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #575757;
+  text-decoration: none;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  color: aquamarine;
+  text-decoration: none;
+}
+video {
+  position: relative;
+  z-index: -1; /* đặt video phía sau nội dung khác */
+  pointer-events: none; /* không chặn click */
+}
+h1 {
+  color: #333;
+  font-size: 36px;
+  font-weight: bold;
+  padding-top: 60px;
+}
+.footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  margin-top: 0;
+  height: 300px;
+}
+.MS {
+  position: absolute;
+  right: 170px;
+  top: 848px;
+  width: 237px;
+  height: 237px;
+  display: block;
+}
+video,
+img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive helpers and mobile-first tweaks */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navbar responsive: mobile-first */
+#navbar {
+  padding: 8px 12px;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+.burger {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 26px;
+  line-height: 1;
+  display: block;
+}
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+}
+.nav-links.open {
+  display: flex;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background: #333;
+  padding: 10px 0;
+  z-index: 1100;
+}
+
+/* Responsive grids */
+.sgx-luoi {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+}
+.baibao-luoi {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Make many absolute-positioned decorative elements flow on small screens */
+@media (max-width: 900px) {
+  .MS,
+  .RN,
+  .HUH,
+  .footer h2,
+  .Neymar,
+  .MD,
+  .PL,
+  .duanhoptackol,
+  .duanchientich,
+  .phaochanracchientich,
+  .phaochanracgioithieu,
+  .duangioithieu {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 10px auto !important;
+    display: block;
+  }
+
+  .footer {
+    height: auto;
+    padding: 40px 16px;
+    text-align: left;
+  }
+
+  .footer ul {
+    padding-left: 0;
+    margin: 10px 0;
+  }
+
+  .backtotop {
+    right: 12px;
+    bottom: 12px;
+    padding: 8px 10px;
+  }
+}
+
+/* Desktop layout: show nav links inline and hide burger */
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+  #navbar {
+    justify-content: center;
+  }
+  #navbar .nav-brand {
+    margin-right: 20px;
+  }
+}
+
+/* Reduce KOL card image height on smaller screens for better balance */
+@media (max-width: 767px) {
+  .kol-card img {
+    height: 220px;
+  }
+}
+
+/* Login form responsive wrapper */
+.login-form {
+  width: 100%;
+  max-width: 420px; /* keeps inputs readable on large screens */
+}
+
+/* Register form responsive wrapper */
+.register-form {
+  width: 100%;
+  max-width: 560px; /* allows a wider signup form on desktops */
+  padding: 0 8px;
+}
+.RN {
+  position: absolute;
+  left: 60px;
+}
+.footer h2 {
+  position: absolute;
+  font-size: 24px;
+  right: 180px;
+}
+.footer ul a {
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: white;
+}
+.HUH {
+  position: absolute;
+  top: 872px;
+  left: 700px;
+}
+.register-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  text-align: center;
+}
+.dangnhaptaikhoan {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.dangkytaikhoan {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+.chientich {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+}
+.sgx-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.sgx-section h1 {
+  font-weight: 800;
+  color: #1b1b1b;
+  margin-bottom: 50px;
+}
+.sgx-luoi {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  max-width: 1700px;
+  margin: 10px;
+}
+.sgx-bentrong {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+}
+.sgx-bentrong:hover {
+  transform: translateY(-5px);
+}
+.sgx-bentrong h3 {
+  color: #007f4f;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.sgx-baibao {
+  text-align: center;
+  padding: 40px;
+}
+.sgx-baibao h2 {
+  font-weight: 800;
+  color: #1b1b1b;
+  background-color: #cce4ff;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 6px;
+  margin-bottom: 60px;
+}
+.baibao-luoi {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.baibao-hinhbaibao {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 420px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.baibao-hinhbaibao:hover {
+  transform: translateY(-5px);
+}
+.lopphubaibao {
+  position: relative;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  padding: 25px;
+  height: 100%;
+}
+.lopphubaibao h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.lopphubaibao p {
+  margin-bottom: 20px;
+}
+.nutdoc {
+  position: absolute;
+  top: 78%;
+  right: 35%;
+  background: #fff;
+  color: #000;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nutdoc:hover {
+  background: #e0e0e0;
+}
+.gioithieu {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
+}
+.gioithieuchung {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 80px 20px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+.gioithieu-container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+.gioithieu-subtitle {
+  color: #5e5e5e;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.tieudegioithieu {
+  color: #1a1a1a;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+.gioithieu-anh {
+  width: 100%;
+  max-width: 1100px;
+  border-radius: 16px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.lichsu h2 {
+  color: #002b3d;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.history p {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.tamnhin h3,
+.sumenh h3 {
+  color: #002b3d;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.tamnhin p,
+.sumenh p {
+  font-size: 17px;
+  color: #333;
+  height: 200px;
+}
+.Neymar {
+  position: absolute;
+  left: 1000px;
+  top: 1375px;
+  width: 237px;
+  height: 237px;
+  display: block;
+}
+.MD {
+  position: absolute;
+  right: 170px;
+  top: 1300px;
+  width: 237px;
+  height: 237px;
+}
+.duanchientich {
+  position: absolute;
+  top: 525px;
+  width: 100px;
+}
+.phaochanracchientich {
+  position: absolute;
+  top: 560px;
+  width: 120px;
+}
+.duangioithieu {
+  position: absolute;
+  top: 450px;
+  width: 100px;
+}
+.phaochanracgioithieu {
+  position: absolute;
+  top: 485px;
+  width: 120px;
+}
+
+.kol-section {
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+.kol-card {
+  overflow: hidden;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kol-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.kol-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
+  filter: brightness(85%);
+  transition: filter 0.3s ease;
+}
+
+.kol-card:hover img {
+  filter: brightness(100%);
+}
+
+.kol-name {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+.duanhoptackol {
+  position: absolute;
+  top: 475px;
+  left: 30px;
+  width: 60px;
+}
+.phaochanrachoptackol {
+  position: absolute;
+  top: 510px;
+  width: 120px;
+}
+.PL {
+  position: absolute;
+  position: absolute;
+  left: 1000px;
+  top: 1325px;
+  width: 237px;
+  height: 237px;
+  display: block;
+}
+
+/* --- Footer improvements (appended) --- */
+.footer {
+  background: linear-gradient(180deg, #082a1f 0%, #0b3726 100%);
+  color: #e9f7ef;
+  width: 100%;
+  margin-top: 40px;
+}
+.footer-inner {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 36px 20px;
+  flex-wrap: wrap;
+}
+.footer-col {
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+.footer h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #fff;
+}
+.footer-logo {
+  width: 84px;
+  height: auto;
+  display: block;
+  margin-top: 8px;
+}
+.footer-qr {
+  width: 120px;
+  height: auto;
+  margin-top: 10px;
+  background: #fff;
+  padding: 6px;
+  border-radius: 8px;
+  display: inline-block;
+}
+.footer-links li {
+  margin: 8px 0;
+}
+.footer-links a,
+.footer-link,
+.project-link {
+  color: #cfeee0;
+  text-decoration: none;
+}
+.footer-links a:hover,
+.footer-link:hover,
+.project-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 10px 12px 22px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Ensure previous absolute helpers don't break the footer; prefer footer-scoped rules */
+.footer .RN,
+.footer .Neymar,
+.footer .HUH,
+.footer .duanchientich,
+.footer .phaochanracchientich,
+.footer .duangioithieu,
+.footer .phaochanracgioithieu {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 8px 0 0 0 !important;
+  display: inline-block !important;
+}
+
+@media (max-width: 767px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 28px 14px;
+  }
+  .footer-col {
+    width: 100%;
+    max-width: 520px;
+  }
+  .footer-qr {
+    margin: 12px auto 0 auto;
+  }
+}
+
+/* small tweak for very large screens */
+@media (min-width: 1400px) {
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
